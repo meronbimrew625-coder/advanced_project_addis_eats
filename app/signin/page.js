@@ -1,0 +1,4 @@
+import Link from 'next/link';
+import { signInAction } from '../actions';
+export const metadata = { title: 'Sign in', robots: { index: false, follow: false } };
+export default function SignInPage() { return <section className="auth-card"><p className="eyebrow">Welcome back</p><h1>Sign in</h1><form action={signInAction} className="stack"><label>Email<input name="email" type="email" required autoComplete="email" /></label><label>Password<input name="password" type="password" required autoComplete="current-password" /></label><button className="button" type="submit">Sign in</button></form><p>New to Addis Eats? <Link href="/signup">Create an account</Link></p><aside className="demo-note"><strong>Demo accounts</strong><br/>Customer: customer@addiseats.test / AddisEats123!<br/>Kitchen: kitchen@addiseats.test / Kitchen123!</aside></section>; }

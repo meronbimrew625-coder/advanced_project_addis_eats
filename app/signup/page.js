@@ -1,0 +1,4 @@
+import Link from 'next/link';
+import { signUpAction } from '../actions';
+export const metadata = { title: 'Create account', robots: { index: false, follow: false } };
+export default function SignUpPage() { return <section className="auth-card"><p className="eyebrow">Join the table</p><h1>Create your account</h1><p>Sign up to place orders and keep track of their status.</p><form action={signUpAction} className="stack"><label>Full name<input name="name" required minLength={2} maxLength={80} autoComplete="name" /></label><label>Email<input name="email" type="email" required maxLength={254} autoComplete="email" /></label><label>Password<input name="password" type="password" required minLength={10} maxLength={128} autoComplete="new-password" /><small>Use at least 10 characters.</small></label><button className="button" type="submit">Create account</button></form><p>Already registered? <Link href="/signin">Sign in</Link></p></section>; }
